@@ -52,5 +52,31 @@ void printrec (void* prec,void* arg)
 	printf ("%-20s %-20s %2d\n", pstud->fname, pstud->lname,pstud->year,pstud->age)
 }
 
+int main ()
+{
+   int nstudents=sizeof(class)/sizeof(struct student);
+	int age
+	puts ("rav records:");
+	puts( "----------------------");
+	apply( class, nstudents, printrec,NULL);
+	/* sort based on first name*/
+    puts("sorted by fast name:");
+    puts("------------------------");
+    qsort(class,nstudents, sizeof(student),compare_fast_name);
+    apply(class,nstudents,printrec,NULL)
+    /* sort based on last name*/
+    puts ("Sorted by last name:");
+    pus ("-------------------------------");
+    qsort ( class,nstudents,sizeof (struct student), compare_last_name)
+    apply ( class, nstudents ,printrec,NULL);
+/* print people older than 20 */
+    puts ( "People older than 20:");
+    puts("-----------------------------");
+    age=20;
+    apply(class,nstudents,isolder,&age);
+    return 0;
+}
+
+
 
 
