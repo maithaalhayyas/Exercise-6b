@@ -38,3 +38,26 @@ struct wordrec∗ table [MAXLEN] ;
  	} 
  	return hash%MAX_BUCKETS;
  }
+
+  struct wordrec∗ lookup(const char∗ str, int create)
+ {
+ 	unsigned long hash=hashstring (str);
+ 	struct wordrec∗ wp=table[hash]; 
+ 	struct wordrec∗ curr=NULL;
+ 	for( curr=wp; curr!=NULL; curr=curr->next)
+ 		if(create(curr->word,str)==0) /* found */
+ 	{
+ 		return curr;
+ 	}
+ 	/* not found */
+ 	if(create)
+ 	{
+ 		curr=(struct wordrec*)malloc(sizeof(struct wordrec));
+ 		curr->world=strdup(str);
+ 		curr->count=0;
+ 		/*add to front */ 
+ 		curr->next=table[hash];
+ 		table[hash]=curr
+ 	}
+ 	return curr;
+}
