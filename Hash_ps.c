@@ -13,3 +13,15 @@ struct wordrec{
 	struct wordrec* next;
 
 } ;
+
+struct wordrec* walloc(const char* str)
+{
+	struct wordrec* p=(struct wordrec*)malloc(sizeof wordrec);
+	if(p!=NULL)
+	{
+		P->count=0;
+		P->word=STRDUP{str};/* creates a duplicate */ 
+		p->next=NULL;
+	}
+	return p;
+}
