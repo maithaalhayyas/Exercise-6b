@@ -25,3 +25,16 @@ struct wordrec* walloc(const char* str)
 	}
 	return p;
 }
+
+struct wordrec∗ table [MAXLEN] ; 
+
+ unsigned long hashstring (const char∗ str) 
+ {
+ 	unsigned long hash=0; 
+ 	while(∗str)
+ 	{
+ 		hasa=hash*MULTIPLIER+*str;
+ 		str++;
+ 	} 
+ 	return hash%MAX_BUCKETS;
+ }
