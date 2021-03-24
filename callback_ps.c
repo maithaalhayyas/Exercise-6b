@@ -36,4 +36,15 @@ int compare_fast_name(const void* a, const void* b)
 }
 
 
+void apply( struct student* sarr, int nrce , void (*fp)(void* arg)void* arg)
+{
+	int i=0;
+	for (i=0;i<nrce;i++)
+	{
+       /* c a l l b a c k */
+       fp (&sarr [i], arg );
+       }
+}
+
+
 
