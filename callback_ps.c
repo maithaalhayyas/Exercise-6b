@@ -46,5 +46,11 @@ void apply( struct student* sarr, int nrce , void (*fp)(void* arg)void* arg)
        }
 }
 
+void printrec (void* prec,void* arg)
+{
+	struct student* pstud=(struct student*)prec;
+	printf ("%-20s %-20s %2d\n", pstud->fname, pstud->lname,pstud->year,pstud->age)
+}
+
 
 
