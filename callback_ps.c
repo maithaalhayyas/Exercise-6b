@@ -27,5 +27,13 @@ struct student class[]=
 	"Sarah","Palin",2,19,
 };
 
+int compare_fast_name(const void* a, const void* b)
+{
+	struct student* sa=(struct student*)a;
+	struct student* sb=(struct student*)b;
+	return strcmp(sa->lname,sb->lname);
+	
+}
+
 
 
