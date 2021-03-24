@@ -2,7 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-// creating a structure for students that contains first name - last name - year and age
+
 #define MAX_STUDENTS 10
 struct student
 {
