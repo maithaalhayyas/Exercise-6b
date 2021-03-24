@@ -61,3 +61,51 @@ struct wordrec∗ table [MAXLEN] ;
  	}
  	return curr;
 }
+
+void cleartable()
+{
+	struct wordrec* wp=NULL;
+	int i=0;
+	for (i=0;i<MAX_BUCKETS;I++)
+	{
+		wp=table[i];
+		while(wp)
+		{
+			p=wp
+			wp=wp->next;
+
+			free(p->word);
+			free(p);
+		}
+	}
+}
+
+int main(int argc, char const *argv[])
+{
+	FILE* fp=fopen("book.text","r");
+	char word [1024];
+	struct  wordrec* wp=NULL;
+	int i=0;
+	memset (table ,0,sizeof(table));
+	while(1)
+	{
+		if (fscanf(fp,"%s",word)!=1)
+			break;
+		wp=lookup(word,1);
+		wp->count++;
+	}
+	fclose(fp);
+for (i=0;i<MAX_BUCKETS;I++)
+{
+	for(wp=table[i];wp!=NULL;wp=wp->next)
+	{
+		if (wp->count>1000)
+		{
+			printf("%s--%1d/n",wp->word,wp->count);
+		}
+	}
+}
+cleartable();
+return 0;
+}
+
